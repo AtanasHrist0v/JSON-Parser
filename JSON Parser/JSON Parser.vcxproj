@@ -127,7 +127,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="KeyValuePair.h" />
+    <ClInclude Include="MyString.h" />
+    <ClInclude Include="Number.h" />
+    <ClInclude Include="String.h" />
+    <ClInclude Include="Value.h" />
     <ClInclude Include="Vector.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="KeyValuePair.cpp" />
+    <ClCompile Include="MyString.cpp" />
+    <ClCompile Include="Number.cpp" />
+    <ClCompile Include="String.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
