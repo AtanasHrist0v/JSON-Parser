@@ -1,14 +1,13 @@
 #pragma once
 #include "Value.h"
 #include "MyString.h"
+#include "SharedPtr.hpp"
 
 class KeyValuePair : public Value {
 private:
 	MyString key;
-	Value* value;
+	SharedPtr<Value> value;
 public:
-
-
 	virtual void print(unsigned tabsCount) const override;
 	virtual void search(const char* key) const override;
 	virtual void set(const char* path, const char* value) override;
