@@ -1,3 +1,5 @@
+// Copied from Angeld55
+
 #include <iostream>
 #pragma once
 class MyString {

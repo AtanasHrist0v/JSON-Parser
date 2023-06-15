@@ -1,3 +1,5 @@
+// Copied from Angeld55
+
 #pragma once
 #include <iostream>
 #include <memory>
