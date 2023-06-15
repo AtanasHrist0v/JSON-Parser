@@ -11,7 +11,12 @@ void CompositeValue::print(unsigned tabsCount) const {
 	std::cout << std::endl << this->closingBracket;
 }
 
-void CompositeValue::search(const MyString& key) const {}
+void CompositeValue::search(const MyString& key) const {
+	size_t vectorSize = this->data.getSize();
+	for (size_t i = 0; i < vectorSize; i++) {
+		this->data[i]->search(key);
+	}
+}
 
 void CompositeValue::set(const StringView& path, const MyString& value) {}
 
