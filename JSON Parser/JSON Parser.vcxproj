@@ -129,12 +129,14 @@
   <ItemGroup>
     <ClInclude Include="KeyValuePair.h" />
     <ClInclude Include="MyString.h" />
+    <ClInclude Include="SimpleValue.h" />
     <ClInclude Include="Value.h" />
     <ClInclude Include="Vector.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="KeyValuePair.cpp" />
     <ClCompile Include="MyString.cpp" />
+    <ClCompile Include="SimpleValue.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
