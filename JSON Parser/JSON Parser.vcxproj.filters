@@ -30,6 +30,12 @@
     <ClInclude Include="SimpleValue.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CompositeValue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UniquePointer.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="KeyValuePair.cpp">
@@ -39,6 +45,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SimpleValue.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CompositeValue.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
