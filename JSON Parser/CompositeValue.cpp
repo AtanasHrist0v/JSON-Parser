@@ -18,7 +18,12 @@ void CompositeValue::search(const MyString& key) const {
 	}
 }
 
-void CompositeValue::set(const StringView& path, const MyString& value) {}
+void CompositeValue::set(const StringView& path, const MyString& value) {
+	size_t vectorSize = this->data.getSize();
+	for (size_t i = 0; i < vectorSize; i++) {
+		this->data[i]->set(path, value);
+	}
+}
 
 void CompositeValue::create(const StringView& path, const MyString& value) {}
 
