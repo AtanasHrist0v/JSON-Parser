@@ -6,6 +6,8 @@
 class CompositeValue : public Value {
 private:
 	Vector<SharedPtr<Value>> data;
+	char openingBracket;
+	char closingBracket;
 public:
 	virtual void print(unsigned tabsCount) const override;
 	virtual void search(const char* key) const override;
