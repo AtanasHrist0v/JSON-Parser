@@ -130,8 +130,8 @@
     <ClInclude Include="CompositeValue.h" />
     <ClInclude Include="KeyValuePair.h" />
     <ClInclude Include="MyString.h" />
+    <ClInclude Include="SharedPtr.hpp" />
     <ClInclude Include="SimpleValue.h" />
-    <ClInclude Include="UniquePointer.hpp" />
     <ClInclude Include="Value.h" />
     <ClInclude Include="Vector.hpp" />
   </ItemGroup>

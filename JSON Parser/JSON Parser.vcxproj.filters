@@ -33,7 +33,7 @@
     <ClInclude Include="CompositeValue.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="UniquePointer.hpp">
+    <ClInclude Include="SharedPtr.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

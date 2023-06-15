@@ -1,10 +1,12 @@
 #pragma once
 #include "Value.h"
 #include "Vector.hpp"
+#include "SharedPtr.hpp"
 
 class CompositeValue : public Value {
 private:
-	Vector<
+	Vector<SharedPtr<Value>> data;
+public:
 	virtual void print(unsigned tabsCount) const override;
 	virtual void search(const char* key) const override;
 	virtual void set(const char* path, const char* value) override;
