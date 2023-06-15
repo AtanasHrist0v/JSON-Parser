@@ -6,11 +6,9 @@ void KeyValuePair::print(unsigned tabsCount) const {
 }
 
 void KeyValuePair::search(const MyString& key) const {
-	if (strcmp(key, this->key.c_str()) == 0) {
+	if (key == this->key) {
 		print();
-		return;
 	}
-
 }
 
 void KeyValuePair::set(const StringView& path, const MyString& value) {}
