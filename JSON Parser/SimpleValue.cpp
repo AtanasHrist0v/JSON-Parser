@@ -1,6 +1,8 @@
 #include "SimpleValue.h"
 
-void SimpleValue::print(unsigned tabsCount) const {}
+void SimpleValue::print(unsigned tabsCount) const {
+	std::cout << this->value;
+}
 
 void SimpleValue::search(const char* key) const {}
 
