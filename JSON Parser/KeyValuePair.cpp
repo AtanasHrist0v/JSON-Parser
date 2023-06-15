@@ -5,25 +5,21 @@ void KeyValuePair::print(unsigned tabsCount) const {
 	this->value->print(tabsCount + 1);
 }
 
-void KeyValuePair::search(const char* key) const {
+void KeyValuePair::search(const MyString& key) const {
+	if (strcmp(key, this->key.c_str()) == 0) {
+		print();
+		return;
+	}
 
 }
 
-void KeyValuePair::set(const char* path, const char* value) {
+void KeyValuePair::set(const StringView& path, const MyString& value) {}
 
-}
+void KeyValuePair::create(const StringView& path, const MyString& value) {}
 
-void KeyValuePair::create(const char* path, const char* value) {
+void KeyValuePair::deleteElement(const StringView& path) {}
 
-}
-
-void KeyValuePair::deleteElement(const char* path) {
-
-}
-
-void KeyValuePair::move(const char* from, const char* to) {
-
-}
+void KeyValuePair::move(const StringView& from, const StringView& to) {}
 
 Value* KeyValuePair::clone() {
 	return new KeyValuePair(*this);

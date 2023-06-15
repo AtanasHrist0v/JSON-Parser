@@ -11,25 +11,15 @@ void CompositeValue::print(unsigned tabsCount) const {
 	std::cout << std::endl << this->closingBracket;
 }
 
-void CompositeValue::search(const char* key) const {
+void CompositeValue::search(const MyString& key) const {}
 
-}
+void CompositeValue::set(const StringView& path, const MyString& value) {}
 
-void CompositeValue::set(const char* path, const char* value) {
+void CompositeValue::create(const StringView& path, const MyString& value) {}
 
-}
+void CompositeValue::deleteElement(const StringView& path) {}
 
-void CompositeValue::create(const char* path, const char* value) {
-
-}
-
-void CompositeValue::deleteElement(const char* path) {
-
-}
-
-void CompositeValue::move(const char* from, const char* to) {
-
-}
+void CompositeValue::move(const StringView& from, const StringView& to) {}
 
 Value* CompositeValue::clone() {
 	return new CompositeValue(*this);

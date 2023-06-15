@@ -8,11 +8,11 @@ private:
 	MyString key;
 	SharedPtr<Value> value;
 public:
-	virtual void print(unsigned tabsCount) const override;
-	virtual void search(const char* key) const override;
-	virtual void set(const char* path, const char* value) override;
-	virtual void create(const char* path, const char* value) override;
-	virtual void deleteElement(const char* path) override;
-	virtual void move(const char* from, const char* to) override;
+	virtual void print(unsigned tabsCount = 0) const override;
+	virtual void search(const MyString& key) const override;
+	virtual void set(const StringView& path, const MyString& value) override;
+	virtual void create(const StringView& path, const MyString& value) override;
+	virtual void deleteElement(const StringView& path) override;
+	virtual void move(const StringView& from, const StringView& to) override;
 	virtual Value* clone() override;
 };
