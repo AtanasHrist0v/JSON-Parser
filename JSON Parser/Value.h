@@ -1,6 +1,7 @@
 #pragma once
 
 class Value {
+public:
 	virtual void print(unsigned tabsCount = 0) const = 0;
 	virtual void search(const char* key) const = 0;
 	virtual void set(const char* path, const char* value) = 0;
