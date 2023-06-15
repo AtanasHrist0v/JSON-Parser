@@ -6,7 +6,11 @@ void SimpleValue::print(unsigned tabsCount) const {
 
 void SimpleValue::search(const MyString& key) const {}
 
-void SimpleValue::set(const StringView& path, const MyString& value) {}
+void SimpleValue::set(const StringView& path, const MyString& value) {
+	if (path.length() == 0) {
+		this->value = value;
+	}
+}
 
 void SimpleValue::create(const StringView& path, const MyString& value) {}
 
