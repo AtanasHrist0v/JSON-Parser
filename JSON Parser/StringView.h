@@ -19,3 +19,6 @@ public:
 	friend std::ostream& operator<<(std::ostream&, const StringView& strView);
 
 };
+
+bool operator==(const StringView& lhs, const MyString& rhs);
+bool operator==(const MyString& lhs, const StringView& rhs);

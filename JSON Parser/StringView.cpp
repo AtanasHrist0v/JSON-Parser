@@ -1,4 +1,4 @@
-// Copied from Angeld55
+// Copied from Angeld55 and added operator==
 
 #include "StringView.h"
 
@@ -30,4 +30,23 @@ std::ostream& operator<<(std::ostream& os, const StringView& strView) {
 		iter++;
 	}
 	return os;
+}
+
+bool operator==(const StringView& lhs, const MyString& rhs) {
+	if (lhs.length() != rhs.length()) {
+		return false;
+	}
+
+	size_t lhsLen = lhs.length();
+	for (size_t i = 0; i < lhsLen; i++) {
+		if (lhs[i] != rhs[i]) {
+			return false;
+		}
+	}
+
+	return true;
+}
+
+bool operator==(const MyString& lhs, const StringView& rhs) {
+	return operator==(rhs, lhs);
 }
