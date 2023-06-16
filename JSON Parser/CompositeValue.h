@@ -5,15 +5,15 @@
 
 class CompositeValue : public Value {
 private:
-	Vector<SharedPtr<Value>> data;
-	char openingBracket;
-	char closingBracket;
-public:
 	static const char ARRAY_OPENING_BRACKET = '[';
 	static const char ARRAY_CLOSING_BRACKET = ']';
 	static const char OBJECT_OPENING_BRACKET = '{';
 	static const char OBJECT_CLOSING_BRACKET = '}';
 
+	Vector<SharedPtr<Value>> data;
+	char openingBracket;
+	char closingBracket;
+public:
 	virtual void print(unsigned tabsCount = 0) const override;
 	virtual void search(const MyString& key) const override;
 	virtual void set(const StringView& path, const MyString& value) override;
