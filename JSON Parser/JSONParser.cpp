@@ -19,9 +19,9 @@ static void removeQuotes(char* string) {
 	}
 }
 
-void JSONParser::executeCommand(const MyString& command, const MyString& commandArguments, bool& commandIsExit) {
+void JSONParser::executeCommand(const MyString& command, const Vector<SharedPtr<MyString>>& commandArguments, bool& commandIsExit) {
 	if (command == OPEN_COMMAND) {
-		open(commandArguments);
+		//open(commandArguments);
 	} else if (command == EXIT_COMMAND) {
 		exit();
 		commandIsExit = true;
@@ -42,20 +42,20 @@ void JSONParser::executeCommand(const MyString& command, const MyString& command
 		} else if (command == PRINT_COMMAND) {
 			this->root->print();
 		} else if (command == SEARCH_COMMAND) {
-			this->root->search(commandArguments);
+			//this->root->search(commandArguments);
 		} else if (command == SET_COMMAND) {
-			std::stringstream ss(commandArguments.c_str());
-			char path[INPUT_MAX_SIZE]{};
-			char value[INPUT_MAX_SIZE]{};
+			//std::stringstream ss(commandArguments.c_str());
+			//char path[INPUT_MAX_SIZE]{};
+			//char value[INPUT_MAX_SIZE]{};
 
-			ss.getline(path, INPUT_MAX_SIZE, ' ');
-			ss.getline(value, INPUT_MAX_SIZE);
-			removeQuotes(path);
-			removeQuotes(value);
+			//ss.getline(path, INPUT_MAX_SIZE, ' ');
+			//ss.getline(value, INPUT_MAX_SIZE);
+			//removeQuotes(path);
+			//removeQuotes(value);
 
-			StringView pathView(path);
+			//StringView pathView(path);
 
-			this->root->set(pathView, value);
+			//this->root->set(pathView, value);
 		} else if (command == CREATE_COMMAND) {
 
 		} else if (command == DELETE_COMMAND) {
@@ -107,6 +107,6 @@ void JSONParser::run() {
 		ss.getline(command, INPUT_MAX_SIZE, ' ');
 		ss.getline(commandArguments, INPUT_MAX_SIZE);
 
-		executeCommand(command, commandArguments, commandIsExit);
+		//executeCommand(command, commandArguments, commandIsExit);
 	}
 }
