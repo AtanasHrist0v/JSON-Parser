@@ -1,55 +1,43 @@
 #include "CompositeValue.h"
 
-static void printTabs(unsigned tabsCount) {
+static void printTabs(std::ostream& os, unsigned tabsCount) {
 	for (size_t i = 0; i < tabsCount; i++) {
-		std::cout << "   ";
-	}
-}
-static void printWhiteSpace(char openingBracket) {
-	switch (openingBracket) {
-		case CompositeValue::ARRAY_OPENING_BRACKET:
-
-			break;
-		case CompositeValue::OBJECT_OPENING_BRACKET:
-
-			break;
-		default:
-			break;
+		os << "   ";
 	}
 }
 
 CompositeValue::CompositeValue(Vector<SharedPtr<Value>>&& data, char openingBracket, char closingBracket) : data(std::move(data)), openingBracket(openingBracket), closingBracket(closingBracket) {}
 
-void CompositeValue::print(unsigned tabsCount) const {//TODO
+void CompositeValue::print(std::ostream& os, unsigned tabsCount) const {//TODO
 	if (this->openingBracket == CompositeValue::OBJECT_OPENING_BRACKET) {
-		printTabs(tabsCount);
-		std::cout << this->openingBracket << std::endl;
+		printTabs(os, tabsCount);
+		os << this->openingBracket << std::endl;
 
 		size_t vectorSize = this->data.getSize();
 		for (size_t i = 0; i < vectorSize; i++) {
-			this->data[i]->print(tabsCount + 1);
+			this->data[i]->print(os, tabsCount + 1);
 			if (i != vectorSize - 1) {
-				std::cout << ',' << std::endl;
+				os << ',' << std::endl;
 			}
 		}
 
-		std::cout << std::endl;
-		printTabs(tabsCount);
-		std::cout << this->closingBracket;
+		os << std::endl;
+		printTabs(os, tabsCount);
+		os << this->closingBracket;
 	} else {
-		std::cout << this->openingBracket << std::endl;
+		os << this->openingBracket << std::endl;
 
 		size_t vectorSize = this->data.getSize();
 		for (size_t i = 0; i < vectorSize; i++) {
-			this->data[i]->print(tabsCount + 1);
+			this->data[i]->print(os, tabsCount + 1);
 			if (i != vectorSize - 1) {
-				std::cout << ',' << std::endl;
+				os << ',' << std::endl;
 			}
 		}
 
-		std::cout << std::endl;
-		printTabs(tabsCount);
-		std::cout << this->closingBracket;
+		os << std::endl;
+		printTabs(os, tabsCount);
+		os << this->closingBracket;
 	}
 }
 

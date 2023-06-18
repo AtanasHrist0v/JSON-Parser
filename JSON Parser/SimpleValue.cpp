@@ -2,8 +2,8 @@
 
 SimpleValue::SimpleValue(MyString&& value) : value(std::move(value)) {}
 
-void SimpleValue::print(unsigned tabsCount) const {
-	std::cout << this->value;
+void SimpleValue::print(std::ostream& os, unsigned tabsCount) const {
+	os << this->value;
 }
 
 void SimpleValue::search(const MyString& key) const {}

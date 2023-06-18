@@ -8,7 +8,7 @@ private:
 public:
 	SimpleValue(MyString&& value);
 
-	virtual void print(unsigned tabsCount = 0) const override;
+	virtual void print(std::ostream& os, unsigned tabsCount = 0) const override;
 	virtual void search(const MyString& key) const override;
 	virtual void set(const StringView& path, const MyString& value) override;
 	virtual void create(const StringView& path, const MyString& value) override;
