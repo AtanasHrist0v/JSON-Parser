@@ -2,4 +2,4 @@
 #include "SharedPtr.hpp"
 #include "Value.h"
 
-SharedPtr<Value> valueFactory(std::istream& is);
+SharedPtr<Value> valueFactory(std::istream& is, bool valueIsArray = true);
