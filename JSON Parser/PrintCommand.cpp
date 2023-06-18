@@ -6,6 +6,6 @@ PrintCommand::PrintCommand() {
 }
 
 void PrintCommand::execute(const Vector<SharedPtr<MyString>>& arguments, SharedPtr<Value>& root, MyString& filePath) const {
-	root->print();
+	root->print(std::cout);
 	std::cout << std::endl;
 }
