@@ -6,10 +6,10 @@
 class CompositeValue : public Value {
 private:
 	Vector<SharedPtr<Value>> data;
-	const char openingBracket;
-	const char closingBracket;
+	char openingBracket;
+	char closingBracket;
 public:
-	CompositeValue(Vector<SharedPtr<Value>>&& data, const char openingBracket, const char closingBracket);
+	CompositeValue(Vector<SharedPtr<Value>>&& data, char openingBracket, char closingBracket);
 
 	static const char ARRAY_OPENING_BRACKET = '[';
 	static const char ARRAY_CLOSING_BRACKET = ']';

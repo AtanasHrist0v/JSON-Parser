@@ -18,7 +18,7 @@ static void printWhiteSpace(char openingBracket) {
 	}
 }
 
-CompositeValue::CompositeValue(Vector<SharedPtr<Value>>&& data, const char openingBracket, const char closingBracket) : data(std::move(data)), openingBracket(openingBracket), closingBracket(closingBracket) {}
+CompositeValue::CompositeValue(Vector<SharedPtr<Value>>&& data, char openingBracket, char closingBracket) : data(std::move(data)), openingBracket(openingBracket), closingBracket(closingBracket) {}
 
 void CompositeValue::print(unsigned tabsCount) const {//TODO
 	if (this->openingBracket == CompositeValue::OBJECT_OPENING_BRACKET) {
