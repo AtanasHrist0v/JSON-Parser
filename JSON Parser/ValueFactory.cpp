@@ -58,7 +58,7 @@ SharedPtr<Value> valueFactory(std::istream& is, bool valueIsArray) {
 				is >> ch;
 			} while (ch != closingBracket);
 
-			value = new CompositeValue(std::move(data), openingBracket, closingBracket);
+			value = new CompositeValue(std::move(data), openingBracket, closingBracket);	
 		}
 		break;
 		default:

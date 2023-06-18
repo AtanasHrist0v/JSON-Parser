@@ -127,11 +127,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CloseCommand.h" />
+    <ClInclude Include="Command.h" />
     <ClInclude Include="CompositeValue.h" />
     <ClInclude Include="Constants.h" />
+    <ClInclude Include="ExitCommand.h" />
     <ClInclude Include="JSONParser.h" />
     <ClInclude Include="KeyValuePair.h" />
     <ClInclude Include="MyString.h" />
+    <ClInclude Include="OpenCommand.h" />
+    <ClInclude Include="PrintCommand.h" />
     <ClInclude Include="SharedPtr.hpp" />
     <ClInclude Include="SimpleValue.h" />
     <ClInclude Include="StringView.h" />
@@ -140,11 +145,16 @@
     <ClInclude Include="Vector.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CloseCommand.cpp" />
+    <ClCompile Include="Command.cpp" />
     <ClCompile Include="CompositeValue.cpp" />
+    <ClCompile Include="ExitCommand.cpp" />
     <ClCompile Include="JSONParser.cpp" />
     <ClCompile Include="KeyValuePair.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MyString.cpp" />
+    <ClCompile Include="OpenCommand.cpp" />
+    <ClCompile Include="PrintCommand.cpp" />
     <ClCompile Include="SimpleValue.cpp" />
     <ClCompile Include="StringView.cpp" />
     <ClCompile Include="ValueFactory.cpp" />
