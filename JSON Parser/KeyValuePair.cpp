@@ -1,7 +1,16 @@
 #include "KeyValuePair.h"
 
+static void printTabs(unsigned tabsCount) {
+	for (size_t i = 0; i < tabsCount; i++) {
+		std::cout << "   ";
+	}
+}
+
+KeyValuePair::KeyValuePair(MyString&& key, SharedPtr<Value>&& value) : key(std::move(key)), value(std::move(value)) {}
+
 void KeyValuePair::print(unsigned tabsCount) const {
-	std::cout << '"' << this->key << "\" : ";
+	printTabs(tabsCount);
+	std::cout << '"' << this->key << "\": ";
 	this->value->print(tabsCount + 1);
 }
 
