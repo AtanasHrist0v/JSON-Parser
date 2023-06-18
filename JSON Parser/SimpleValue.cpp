@@ -1,5 +1,7 @@
 #include "SimpleValue.h"
 
+SimpleValue::SimpleValue(MyString&& value) : value(std::move(value)) {}
+
 void SimpleValue::print(unsigned tabsCount) const {
 	std::cout << this->value;
 }
