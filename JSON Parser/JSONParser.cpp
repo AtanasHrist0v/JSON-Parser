@@ -4,6 +4,7 @@
 #include "CloseCommand.h"
 #include "ExitCommand.h"
 #include "PrintCommand.h"
+#include "HelpCommand.h"
 #include <sstream>
 
 //static void clearConsole() {
@@ -53,6 +54,7 @@ JSONParser::JSONParser() {
 	this->allCommands.push_back(std::move(SharedPtr<Command>(new CloseCommand)));
 	this->allCommands.push_back(std::move(SharedPtr<Command>(new ExitCommand)));
 	this->allCommands.push_back(std::move(SharedPtr<Command>(new PrintCommand)));
+	this->allCommands.push_back(std::move(SharedPtr<Command>(new HelpCommand)));
 }
 
 void JSONParser::run() {
