@@ -5,6 +5,8 @@
 #include "ExitCommand.h"
 #include "PrintCommand.h"
 #include "HelpCommand.h"
+#include "SearchCommand.h"
+#include "SaveCommand.h"
 #include <sstream>
 
 //static void clearConsole() {
@@ -45,16 +47,21 @@ void JSONParser::executeCommand(const MyString& command, const Vector<SharedPtr<
 			} catch (const std::exception& ex) {
 				std::cout << "Error! " << ex.what() << std::endl;
 			}
+			return;
 		}
 	}
+
+	std::cout << "No such command." << std::endl;
 }
 
 JSONParser::JSONParser() {
 	this->allCommands.push_back(std::move(SharedPtr<Command>(new OpenCommand)));
 	this->allCommands.push_back(std::move(SharedPtr<Command>(new CloseCommand)));
+	this->allCommands.push_back(std::move(SharedPtr<Command>(new SaveCommand)));
+	this->allCommands.push_back(std::move(SharedPtr<Command>(new HelpCommand)));
 	this->allCommands.push_back(std::move(SharedPtr<Command>(new ExitCommand)));
 	this->allCommands.push_back(std::move(SharedPtr<Command>(new PrintCommand)));
-	this->allCommands.push_back(std::move(SharedPtr<Command>(new HelpCommand)));
+	this->allCommands.push_back(std::move(SharedPtr<Command>(new SearchCommand)));
 }
 
 void JSONParser::run() {
@@ -68,7 +75,7 @@ void JSONParser::run() {
 	Vector<SharedPtr<MyString>> commandArguments;
 
 	while (!commandIsExit) {
-		std::cout << '>';
+		std::cout << "> ";
 		std::cin.getline(userInput, INPUT_MAX_SIZE);
 
 		ss.str(userInput);
