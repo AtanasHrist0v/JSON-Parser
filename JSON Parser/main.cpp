@@ -1,6 +1,11 @@
 #include "JSONParser.h"
 
 int main() {
-	JSONParser parser;
-	parser.run();
+	{
+		int* ptr = new int(1);
+		JSONParser parser;
+		parser.run();
+		char* ch = new char('A');
+	}
+	_CrtDumpMemoryLeaks();
 }
