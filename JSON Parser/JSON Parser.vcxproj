@@ -139,6 +139,7 @@
     <ClInclude Include="OpenCommand.h" />
     <ClInclude Include="PrintCommand.h" />
     <ClInclude Include="SaveCommand.h" />
+    <ClInclude Include="SearchCommand.h" />
     <ClInclude Include="SharedPtr.hpp" />
     <ClInclude Include="SimpleValue.h" />
     <ClInclude Include="StringView.h" />
@@ -159,6 +160,7 @@
     <ClCompile Include="OpenCommand.cpp" />
     <ClCompile Include="PrintCommand.cpp" />
     <ClCompile Include="SaveCommand.cpp" />
+    <ClCompile Include="SearchCommand.cpp" />
     <ClCompile Include="SimpleValue.cpp" />
     <ClCompile Include="StringView.cpp" />
     <ClCompile Include="ValueFactory.cpp" />

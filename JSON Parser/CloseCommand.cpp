@@ -17,3 +17,7 @@ void CloseCommand::execute(const Vector<SharedPtr<MyString>>& arguments, SharedP
 	delete &(*root);
 	filePath = "";
 }
+
+void CloseCommand::printDescription(unsigned descriptionAlignment) const {}
+
+void CloseCommand::printInfo() const {}

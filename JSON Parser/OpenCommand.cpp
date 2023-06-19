@@ -22,3 +22,14 @@ void OpenCommand::execute(const Vector<SharedPtr<MyString>>& arguments, SharedPt
 	filePath = *arguments[0];
 	ifs.close();
 }
+
+void OpenCommand::printDescription(unsigned descriptionAlignment) const {
+	std::cout << this->name;
+	size_t padding = descriptionAlignment - this->name.length();
+	for (size_t i = 0; i < padding; i++) {
+		std::cout << ' ';
+	}
+	std::cout << "Opens a json file...";//TODO
+}
+
+void OpenCommand::printInfo() const {}

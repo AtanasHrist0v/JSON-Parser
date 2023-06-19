@@ -9,3 +9,7 @@ void PrintCommand::execute(const Vector<SharedPtr<MyString>>& arguments, SharedP
 	root->print(std::cout);
 	std::cout << std::endl;
 }
+
+void PrintCommand::printDescription(unsigned descriptionAlignment) const {}
+
+void PrintCommand::printInfo() const {}

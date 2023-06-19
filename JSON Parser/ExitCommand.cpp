@@ -6,7 +6,9 @@ ExitCommand::ExitCommand() {
 }
 
 void ExitCommand::execute(const Vector<SharedPtr<MyString>>& arguments, SharedPtr<Value>& root, MyString& filePath) const {
-	if (arguments.getSize() != this->argumentsCount) {
-		throw std::logic_error("which one of y'all niggas stole my bike?!");
-	}
+	//exit(0);
 }
+
+void ExitCommand::printDescription(unsigned descriptionAlignment) const {}
+
+void ExitCommand::printInfo() const {}

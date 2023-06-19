@@ -23,3 +23,7 @@ void SaveCommand::execute(const Vector<SharedPtr<MyString>>& arguments, SharedPt
 	//filePath = *arguments[0];
 	//ifs.close();
 }
+
+void SaveCommand::printDescription(unsigned descriptionAlignment) const {}
+
+void SaveCommand::printInfo() const {}
