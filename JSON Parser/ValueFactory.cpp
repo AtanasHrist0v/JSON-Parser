@@ -24,17 +24,50 @@ SharedPtr<Value> valueFactory(std::istream& is, bool valueIsArray) {
 	char ch;
 
 	is >> ch;
-	if (ch == ',' || ch == ':') {
+	if (ch == ',' || ch == ':') {//TODO
 		is >> ch;
 	}
 
 	switch (ch) {
 		case VALUE_CHAR:
+		case '0':
+		case '1':
+		case '2':
+		case '3':
+		case '4':
+		case '5':
+		case '6':
+		case '7':
+		case '8':
+		case '9':
+		case 't':
+		case 'f':
+		case 'n':
 		{
 			if (valueIsArray) {
-				static char valueBuff[INPUT_MAX_SIZE]{};
+				static int pos;
+				pos = 0;
 
-				is.getline(valueBuff, INPUT_MAX_SIZE, VALUE_CHAR);
+				char valueBuff[INPUT_MAX_SIZE]{};
+
+				if (ch == VALUE_CHAR) {
+					valueBuff[pos++] = VALUE_CHAR;
+					valueBuff[pos++] = is.peek();
+					while (is.peek() != VALUE_CHAR) {
+						is.get();
+						valueBuff[pos++] = is.peek();
+					}
+					is >> ch;
+					is >> ch;
+				} else {
+					while (ch != ',' && ch != CompositeValue::ARRAY_CLOSING_BRACKET && ch != CompositeValue::OBJECT_CLOSING_BRACKET) {
+						valueBuff[pos++] = ch;
+						is >> ch;
+					}
+				}
+
+				is.seekg(-1, std::ios::cur);
+
 				value = new SimpleValue(valueBuff);
 
 				break;
