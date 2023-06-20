@@ -5,11 +5,16 @@
 #include "Value.h"
 
 class Command {
-protected:// -> private?
-	MyString name = "";
-	unsigned argumentsCount = 0;
+private:
+	MyString name;
+	unsigned argumentsCount;
 public:
+	Command(const MyString& name, unsigned argumentsCount);
+	Command(MyString&& name, unsigned argumentsCount);
+
 	const MyString& getName() const;
+	unsigned getArgumentsCount() const;
+
 	virtual void execute(const Vector<SharedPtr<MyString>>& arguments, SharedPtr<Value>& root, MyString& filePath) const = 0;
 	virtual void printDescription(unsigned descriptionAlignment) const = 0;
 	virtual void printInfo() const = 0;
