@@ -1,12 +1,9 @@
 #include "SearchCommand.h"
 
-SearchCommand::SearchCommand() {
-	this->name = "search";
-	this->argumentsCount = 1;
-}
+SearchCommand::SearchCommand() : Command("search", 1) {}
 
 void SearchCommand::execute(const Vector<SharedPtr<MyString>>& arguments, SharedPtr<Value>& root, MyString& filePath) const {
-	if (arguments.getSize() != this->argumentsCount) {
+	if (arguments.getSize() != getArgumentsCount()) {
 		throw std::logic_error("Search command takes 1 argument.");
 	}
 

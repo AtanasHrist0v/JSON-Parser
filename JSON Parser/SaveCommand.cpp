@@ -1,9 +1,6 @@
 #include "SaveCommand.h"
 
-SaveCommand::SaveCommand() {
-	this->name = "print";
-	this->argumentsCount = 1;
-}
+SaveCommand::SaveCommand() : Command("save", 1) {}
 
 void SaveCommand::execute(const Vector<SharedPtr<MyString>>& arguments, SharedPtr<Value>& root, MyString& filePath) const {
 	//if (arguments.getSize() != this->argumentsCount) {
