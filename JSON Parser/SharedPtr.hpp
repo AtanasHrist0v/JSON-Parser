@@ -1,4 +1,4 @@
-// Copied from Angeld55
+// Copied from Angeld55 and added move semantics
 
 #pragma once
 #include <iostream>
@@ -11,13 +11,15 @@ class SharedPtr {
 
 	void free();
 	void copyFrom(const SharedPtr<T>& other);
-
+	void moveFrom(SharedPtr<T>&& other);
 public:
 	SharedPtr();
 	SharedPtr(T* data);
 
 	SharedPtr(const SharedPtr<T>& other);
 	SharedPtr& operator=(const SharedPtr<T>& other);
+	SharedPtr(SharedPtr<T>&& other);
+	SharedPtr& operator=(SharedPtr<T>&& other);
 
 	const T& operator*() const;
 	T& operator*();
@@ -47,6 +49,14 @@ void SharedPtr<T>::copyFrom(const SharedPtr<T>& other) {
 		(*pointersCount)++;
 }
 
+template<typename T>
+inline void SharedPtr<T>::moveFrom(SharedPtr<T>&& other) {
+	this->data = other.data;
+	other.data = nullptr;
+	this->pointersCount = other.pointersCount;
+	other.pointersCount = nullptr;
+}
+
 template <typename T>
 SharedPtr<T>::SharedPtr() {
 	data = nullptr;
@@ -70,6 +80,20 @@ SharedPtr<T>& SharedPtr<T>::operator=(const SharedPtr<T>& other) {
 	if (this != &other) {
 		free();
 		copyFrom(other);
+	}
+	return *this;
+}
+
+template<typename T>
+SharedPtr<T>::SharedPtr(SharedPtr<T>&& other) {
+	moveFrom(std::move(other));
+}
+
+template<typename T>
+SharedPtr<T>& SharedPtr<T>::operator=(SharedPtr<T>&& other) {
+	if (this != &other) {
+		free();
+		moveFrom(std::move(other));
 	}
 	return *this;
 }
