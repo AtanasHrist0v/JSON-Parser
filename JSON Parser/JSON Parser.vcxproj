@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClInclude Include="CloseCommand.h" />
     <ClInclude Include="Command.h" />
+    <ClInclude Include="CommandsManager.h" />
     <ClInclude Include="CompositeValue.h" />
     <ClInclude Include="Constants.h" />
     <ClInclude Include="ExitCommand.h" />
@@ -150,6 +151,7 @@
   <ItemGroup>
     <ClCompile Include="CloseCommand.cpp" />
     <ClCompile Include="Command.cpp" />
+    <ClCompile Include="CommandsManager.cpp" />
     <ClCompile Include="CompositeValue.cpp" />
     <ClCompile Include="ExitCommand.cpp" />
     <ClCompile Include="HelpCommand.cpp" />

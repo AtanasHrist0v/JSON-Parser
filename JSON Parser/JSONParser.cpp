@@ -1,12 +1,6 @@
 #include "JSONParser.h"
 #include "Constants.h"
-#include "OpenCommand.h"
-#include "CloseCommand.h"
-#include "ExitCommand.h"
-#include "PrintCommand.h"
-#include "HelpCommand.h"
-#include "SearchCommand.h"
-#include "SaveCommand.h"
+#include "CommandsManager.h"
 #include <sstream>
 
 //static void clearConsole() {
@@ -27,19 +21,9 @@ static void removeQuotes(char* string) {
 }
 
 void JSONParser::executeCommand(const MyString& command, const Vector<SharedPtr<MyString>>& commandArguments, bool& commandIsExit) {
-	static const ExitCommand exitCommand;
-	if (command == exitCommand.getName()) {
-		try {
-			exitCommand.execute(commandArguments, this->root, this->filePath);
-			commandIsExit = true;
-		} catch (const std::exception& ex) {
-			std::cout << "Error! " << ex.what() << std::endl;
-		}
+	static const Vector<SharedPtr<Command>>& allCommands = CommandsManager::getInstance().getCommands();
+	static const size_t allCommandsCount = allCommands.getSize();
 
-		return;
-	}
-
-	static const size_t allCommandsCount = this->allCommands.getSize();
 	for (size_t i = 0; i < allCommandsCount; i++) {
 		if (allCommands[i]->getName() == command) {
 			try {
@@ -52,16 +36,6 @@ void JSONParser::executeCommand(const MyString& command, const Vector<SharedPtr<
 	}
 
 	std::cout << "No such command." << std::endl;
-}
-
-JSONParser::JSONParser() {
-	this->allCommands.push_back(std::move(SharedPtr<Command>(new OpenCommand)));
-	this->allCommands.push_back(std::move(SharedPtr<Command>(new CloseCommand)));
-	this->allCommands.push_back(std::move(SharedPtr<Command>(new SaveCommand)));
-	this->allCommands.push_back(std::move(SharedPtr<Command>(new HelpCommand)));
-	this->allCommands.push_back(std::move(SharedPtr<Command>(new ExitCommand)));
-	this->allCommands.push_back(std::move(SharedPtr<Command>(new PrintCommand)));
-	this->allCommands.push_back(std::move(SharedPtr<Command>(new SearchCommand)));
 }
 
 void JSONParser::run() {

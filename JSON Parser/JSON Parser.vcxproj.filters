@@ -72,6 +72,9 @@
     <ClInclude Include="SearchCommand.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CommandsManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="KeyValuePair.cpp">
@@ -120,6 +123,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SearchCommand.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandsManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
