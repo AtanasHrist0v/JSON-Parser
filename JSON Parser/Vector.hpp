@@ -146,7 +146,7 @@ void Vector<T>::pop_back() {
 template <typename T>
 const T& Vector<T>::operator[](size_t index) const {
 	if (index >= this->size) {
-		throw std::out_of_range("Index outside the range of the array!");
+		throw std::out_of_range("Index outside the range of the vector!");
 	}
 
 	return this->data[index];
@@ -154,7 +154,7 @@ const T& Vector<T>::operator[](size_t index) const {
 template <typename T>
 T& Vector<T>::operator[](size_t index) {
 	if (index >= this->size) {
-		throw std::out_of_range("Index outside the range of the array!");
+		throw std::out_of_range("Index outside the range of the vector!");
 	}
 
 	return this->data[index];
