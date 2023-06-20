@@ -29,13 +29,15 @@ void JSONParser::executeCommand(const MyString& command, const Vector<SharedPtr<
 			try {
 				allCommands[i]->execute(commandArguments, this->root, this->filePath);
 			} catch (const std::exception& ex) {
-				std::cout << "Error! " << ex.what() << std::endl;
+				std::cout << ex.what() << std::endl;
 			}
 			return;
 		}
 	}
 
-	std::cout << "No such command." << std::endl;
+	if (command.length() != 0) {
+		std::cout << '\'' << command << '\'' << " is not recognised as an internal command." << std::endl;
+	}
 }
 
 void JSONParser::run() {
