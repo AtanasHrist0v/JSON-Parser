@@ -1,6 +1,7 @@
 #include "SearchCommand.h"
+#include "Constants.h"
 
-SearchCommand::SearchCommand() : Command("search", 1) {}
+SearchCommand::SearchCommand() : Command(SEARCH_COMMAND_NAME, SEARCH_COMMAND_INFO, SEARCH_COMMAND_DESCRIPTION, SEARCH_COMMAND_ARGUMENTS_COUNT) {}
 
 void SearchCommand::execute(const Vector<SharedPtr<MyString>>& arguments, SharedPtr<Value>& root, MyString& filePath) const {
 	if (arguments.getSize() != getArgumentsCount()) {
@@ -13,7 +14,3 @@ void SearchCommand::execute(const Vector<SharedPtr<MyString>>& arguments, Shared
 
 	root->search(*arguments[0]);
 }
-
-void SearchCommand::printDescription(unsigned descriptionAlignment) const {}
-
-void SearchCommand::printInfo() const {}

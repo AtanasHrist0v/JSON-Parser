@@ -1,6 +1,7 @@
 #include "SaveCommand.h"
+#include "Constants.h"
 
-SaveCommand::SaveCommand() : Command("save", 1) {}
+SaveCommand::SaveCommand() : Command(SAVE_COMMAND_NAME, SAVE_COMMAND_INFO, SAVE_COMMAND_DESCRIPTION, SAVE_COMMAND_ARGUMENTS_COUNT) {}
 
 void SaveCommand::execute(const Vector<SharedPtr<MyString>>& arguments, SharedPtr<Value>& root, MyString& filePath) const {
 	//if (arguments.getSize() != this->argumentsCount) {
@@ -20,7 +21,3 @@ void SaveCommand::execute(const Vector<SharedPtr<MyString>>& arguments, SharedPt
 	//filePath = *arguments[0];
 	//ifs.close();
 }
-
-void SaveCommand::printDescription(unsigned descriptionAlignment) const {}
-
-void SaveCommand::printInfo() const {}

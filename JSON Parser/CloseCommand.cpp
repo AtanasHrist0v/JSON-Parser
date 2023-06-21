@@ -1,6 +1,7 @@
 #include "CloseCommand.h"
+#include "Constants.h"
 
-CloseCommand::CloseCommand() : Command("close", 0) {}
+CloseCommand::CloseCommand() : Command(CLOSE_COMMAND_NAME, CLOSE_COMMAND_INFO, CLOSE_COMMAND_DESCRIPTION, CLOSE_COMMAND_ARGUMENTS_COUNT) {}
 
 void CloseCommand::execute(const Vector<SharedPtr<MyString>>& arguments, SharedPtr<Value>& root, MyString& filePath) const {
 	if (arguments.getSize() != getArgumentsCount()) {
@@ -16,7 +17,3 @@ void CloseCommand::execute(const Vector<SharedPtr<MyString>>& arguments, SharedP
 	//&(*root) = nullptr;
 	filePath = "";
 }
-
-void CloseCommand::printDescription(unsigned descriptionAlignment) const {}
-
-void CloseCommand::printInfo() const {}
