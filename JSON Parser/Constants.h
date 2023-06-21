@@ -11,7 +11,7 @@ const char OPEN_COMMAND_DESCRIPTION[] = "OPEN_COMMAND_DESCRIPTION";
 const unsigned OPEN_COMMAND_ARGUMENTS_COUNT = 1;
 
 const char CLOSE_COMMAND_NAME[] = "close";
-const char CLOSE_COMMAND_INFO[] = "Opens a .json file and loads it into memory.";
+const char CLOSE_COMMAND_INFO[] = "CLOSE_COMMAND_INFO";
 const char CLOSE_COMMAND_DESCRIPTION[] = "CLOSE_COMMAND_DESCRIPTION";
 const unsigned CLOSE_COMMAND_ARGUMENTS_COUNT = 0;
 
@@ -42,7 +42,7 @@ const char PRINT_COMMAND_INFO[] = "PRINT_COMMAND_INFO";
 const char PRINT_COMMAND_DESCRIPTION[] = "PRINT_COMMAND_DESCRIPTION";
 const unsigned PRINT_COMMAND_ARGUMENTS_COUNT = 0;
 
-const char SEARCH_COMMAND_NAME[] = "search tha nigga on the road again";
+const char SEARCH_COMMAND_NAME[] = "search";
 const char SEARCH_COMMAND_INFO[] = "SEARCH_COMMAND_INFO";
 const char SEARCH_COMMAND_DESCRIPTION[] = "SEARCH_COMMAND_DESCRIPTION";
 const unsigned SEARCH_COMMAND_ARGUMENTS_COUNT = 1;
