@@ -6,17 +6,19 @@
 
 class Command {
 private:
-	MyString name;
+	const MyString name;
+	const MyString info;
+	const MyString description;
 	unsigned argumentsCount;
 public:
-	Command(const MyString& name, unsigned argumentsCount);
-	Command(MyString&& name, unsigned argumentsCount);
+	Command(const MyString& name, const MyString& info, const MyString& description, unsigned argumentsCount);
+	Command(MyString&& name, MyString&& info, MyString&& description, unsigned argumentsCount);
+	virtual ~Command() = default;
 
 	const MyString& getName() const;
 	unsigned getArgumentsCount() const;
 
 	virtual void execute(const Vector<SharedPtr<MyString>>& arguments, SharedPtr<Value>& root, MyString& filePath) const = 0;
-	virtual void printDescription(unsigned descriptionAlignment) const = 0;
-	virtual void printInfo() const = 0;
-	virtual ~Command() = default;
+	virtual void printInfo() const;
+	virtual void printDescription() const;
 };
