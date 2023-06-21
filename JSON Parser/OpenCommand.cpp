@@ -18,4 +18,6 @@ void OpenCommand::execute(const Vector<SharedPtr<MyString>>& arguments, SharedPt
 	root = std::move(valueFactory(ifs));
 	filePath = *arguments[0];
 	ifs.close();
+
+	std::cout << "File successfully read and loaded into memory." << std::endl;
 }
