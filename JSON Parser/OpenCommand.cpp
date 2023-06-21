@@ -3,7 +3,7 @@
 #include "Constants.h"
 #include "ValueFactory.h"
 
-OpenCommand::OpenCommand() : Command(OPEN_COMMAND_NAME, "gay", "gay2", OPEN_COMMAND_ARGUMENTS_COUNT) {}
+OpenCommand::OpenCommand() : Command(OPEN_COMMAND_NAME, OPEN_COMMAND_INFO, OPEN_COMMAND_DESCRIPTION, OPEN_COMMAND_ARGUMENTS_COUNT) {}
 
 void OpenCommand::execute(const Vector<SharedPtr<MyString>>& arguments, SharedPtr<Value>& root, MyString& filePath) const {
 	if (arguments.getSize() < getArgumentsCount()) {
