@@ -14,14 +14,14 @@ unsigned Command::getArgumentsCount() const {
 }
 
 void Command::printInfo() const {
-	std::cout << this->info;
-}
-
-void Command::printDescription() const {
 	std::cout << this->name;
 	size_t padding = DESCRIPTION_ALIGNMENT - getName().length();
 	for (size_t i = 0; i < padding; i++) {
 		std::cout << ' ';
 	}
-	std::cout << this->description;
+	std::cout << this->info;
+}
+
+void Command::printDescription() const {
+	std::cout << this->description << std::endl;
 }
