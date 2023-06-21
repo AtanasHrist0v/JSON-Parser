@@ -17,6 +17,9 @@ void KeyValuePair::print(std::ostream& os, unsigned tabsCount) const {
 void KeyValuePair::search(const MyString& key) const {//TODO regular expression search
 	if (key == this->key) {
 		this->value->print(std::cout);
+		std::cout << std::endl;
+	} else {
+		this->value->search(key);
 	}
 }
 
