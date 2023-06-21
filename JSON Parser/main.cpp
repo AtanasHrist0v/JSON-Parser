@@ -1,9 +1,6 @@
 #include "JSONParser.h"
 
 int main() {
-	{
-		JSONParser parser;
-		parser.run();
-	}
-	_CrtDumpMemoryLeaks();
+	JSONParser parser;
+	parser.run();
 }
