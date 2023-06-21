@@ -58,7 +58,7 @@ void JSONParser::run() {
 		ss.getline(commandStr, INPUT_MAX_SIZE, ' ');
 		commandArguments.clear();
 		while (!ss.eof()) {
-			ss.getline(commandArgumentsStr, INPUT_MAX_SIZE);
+			ss.getline(commandArgumentsStr, INPUT_MAX_SIZE, ' ');
 			commandArguments.push_back(std::move(SharedPtr<MyString>(new MyString(commandArgumentsStr))));
 		}
 		ss.clear();
