@@ -7,9 +7,8 @@ HelpCommand::HelpCommand() : Command(HELP_COMMAND_NAME, HELP_COMMAND_INFO, HELP_
 void HelpCommand::execute(const Vector<SharedPtr<MyString>>& arguments, SharedPtr<Value>& root, MyString& filePath) const {
 	const Vector<SharedPtr<Command>>& allCommands = CommandsManager::getInstance().getCommands();
 	size_t allCommandsCount = allCommands.getSize();
-	size_t argumentsCount = arguments.getSize();
 
-	if (argumentsCount == 0) {
+	if (arguments.getSize() == 0) {
 		for (size_t i = 0; i < allCommandsCount; i++) {
 			allCommands[i]->printInfo();
 			std::cout << std::endl;
@@ -18,7 +17,7 @@ void HelpCommand::execute(const Vector<SharedPtr<MyString>>& arguments, SharedPt
 	}
 
 	for (size_t i = 0; i < allCommandsCount; i++) {
-		if (allCommands[i]->getName() == *arguments[i]) {
+		if (allCommands[i]->getName() == *arguments[0]) {
 			allCommands[i]->printDescription();
 			return;
 		}
