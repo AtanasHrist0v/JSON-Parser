@@ -19,6 +19,6 @@ public:
 	unsigned getArgumentsCount() const;
 
 	virtual void execute(const Vector<SharedPtr<MyString>>& arguments, SharedPtr<Value>& root, MyString& filePath) const = 0;
-	virtual void printInfo() const;
 	virtual void printDescription() const;
+	virtual void printInfo() const;
 };

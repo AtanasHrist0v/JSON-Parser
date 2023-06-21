@@ -13,6 +13,10 @@ unsigned Command::getArgumentsCount() const {
 	return this->argumentsCount;
 }
 
+void Command::printDescription() const {
+	std::cout << this->description << std::endl;
+}
+
 void Command::printInfo() const {
 	std::cout << this->name;
 	size_t padding = DESCRIPTION_ALIGNMENT - getName().length();
@@ -20,8 +24,4 @@ void Command::printInfo() const {
 		std::cout << ' ';
 	}
 	std::cout << this->info;
-}
-
-void Command::printDescription() const {
-	std::cout << this->description << std::endl;
 }
