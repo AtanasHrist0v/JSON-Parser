@@ -4,7 +4,7 @@
 SearchCommand::SearchCommand() : Command(SEARCH_COMMAND_NAME, SEARCH_COMMAND_INFO, SEARCH_COMMAND_DESCRIPTION, SEARCH_COMMAND_ARGUMENTS_COUNT) {}
 
 void SearchCommand::execute(const Vector<SharedPtr<MyString>>& arguments, SharedPtr<Value>& root, MyString& filePath) const {
-	if (arguments.getSize() != getArgumentsCount()) {
+	if (arguments.getSize() < getArgumentsCount()) {
 		throw std::logic_error("Search command takes 1 argument.");
 	}
 
@@ -12,5 +12,8 @@ void SearchCommand::execute(const Vector<SharedPtr<MyString>>& arguments, Shared
 		throw std::logic_error("No json file has been loaded.");
 	}
 
+	std::cout << '[' << std::endl;
 	root->search(*arguments[0]);
+	std::cout << ']' << std::endl;
+
 }
