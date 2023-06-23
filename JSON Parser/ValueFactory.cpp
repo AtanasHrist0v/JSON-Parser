@@ -6,10 +6,10 @@
 
 static char getClosingBracket(char openingBracket) {
 	switch (openingBracket) {
-		case CompositeValue::ARRAY_OPENING_BRACKET:
-			return CompositeValue::ARRAY_CLOSING_BRACKET;
-		case CompositeValue::OBJECT_OPENING_BRACKET:
-			return CompositeValue::OBJECT_CLOSING_BRACKET;
+		case ARRAY_OPENING_BRACKET:
+			return ARRAY_CLOSING_BRACKET;
+		case OBJECT_OPENING_BRACKET:
+			return OBJECT_CLOSING_BRACKET;
 		default:
 			break;
 	}
@@ -29,7 +29,7 @@ SharedPtr<Value> valueFactory(std::istream& is, bool valueIsArray) {
 	}
 
 	switch (ch) {
-		case VALUE_CHAR:
+		case DOUBLE_QUOTES_CHAR:
 		case '0':
 		case '1':
 		case '2':
@@ -50,17 +50,17 @@ SharedPtr<Value> valueFactory(std::istream& is, bool valueIsArray) {
 
 				char valueBuff[INPUT_MAX_SIZE]{};
 
-				if (ch == VALUE_CHAR) {
-					valueBuff[pos++] = VALUE_CHAR;
+				if (ch == DOUBLE_QUOTES_CHAR) {
+					valueBuff[pos++] = DOUBLE_QUOTES_CHAR;
 					valueBuff[pos++] = is.peek();
-					while (is.peek() != VALUE_CHAR) {
+					while (is.peek() != DOUBLE_QUOTES_CHAR) {
 						is.get();
 						valueBuff[pos++] = is.peek();
 					}
 					is >> ch;
 					is >> ch;
 				} else {
-					while (ch != ',' && ch != CompositeValue::ARRAY_CLOSING_BRACKET && ch != CompositeValue::OBJECT_CLOSING_BRACKET) {
+					while (ch != ',' && ch != ARRAY_CLOSING_BRACKET && ch != OBJECT_CLOSING_BRACKET) {
 						valueBuff[pos++] = ch;
 						is >> ch;
 					}
@@ -73,21 +73,21 @@ SharedPtr<Value> valueFactory(std::istream& is, bool valueIsArray) {
 				break;
 			}
 
-			static char keyBuff[INPUT_MAX_SIZE]{};
-			is.getline(keyBuff, INPUT_MAX_SIZE, VALUE_CHAR);
+			static char keyBuff[INPUT_MAX_SIZE]{};	
+			is.getline(keyBuff, INPUT_MAX_SIZE, DOUBLE_QUOTES_CHAR);
 
 			value = new KeyValuePair(keyBuff, valueFactory(is));
 		}
 		break;
-		case CompositeValue::ARRAY_OPENING_BRACKET:
-		case CompositeValue::OBJECT_OPENING_BRACKET:
+		case ARRAY_OPENING_BRACKET:
+		case OBJECT_OPENING_BRACKET:
 		{
 			Vector<SharedPtr<Value>> data;
 			char openingBracket = ch;
 			char closingBracket = getClosingBracket(ch);
 
 			do {
-				data.push_back(std::move(valueFactory(is, ch == CompositeValue::ARRAY_OPENING_BRACKET)));
+				data.push_back(std::move(valueFactory(is, ch == ARRAY_OPENING_BRACKET)));
 				is >> ch;
 			} while (ch != closingBracket);
 
