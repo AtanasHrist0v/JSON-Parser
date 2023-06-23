@@ -1,6 +1,17 @@
 #pragma once
 
-const char VALUE_CHAR = '\"';
+const char REVERSE_SOLIDUS_CHAR = '\\';
+const char DOUBLE_QUOTES_CHAR = '\"';
+const char COMMA_CHAR = ',';
+const char COLON_CHAR = ':';
+const char DIGITS_CHARS[] = "0123456789";
+const char ARRAY_OPENING_BRACKET = '[';
+const char ARRAY_CLOSING_BRACKET = ']';
+const char OBJECT_OPENING_BRACKET = '{';
+const char OBJECT_CLOSING_BRACKET = '}';
+const char TRUE_VALUE[] = "true";
+const char FALSE_VALUE[] = "false";
+const char NULL_VALUE[] = "null";
 
 const size_t INPUT_MAX_SIZE = 1024;
 const size_t DESCRIPTION_ALIGNMENT = 10;
