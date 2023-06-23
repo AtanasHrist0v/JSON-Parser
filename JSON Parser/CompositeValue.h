@@ -11,11 +11,6 @@ private:
 public:
 	CompositeValue(Vector<SharedPtr<Value>>&& data, char openingBracket, char closingBracket);
 
-	static const char ARRAY_OPENING_BRACKET = '[';
-	static const char ARRAY_CLOSING_BRACKET = ']';
-	static const char OBJECT_OPENING_BRACKET = '{';
-	static const char OBJECT_CLOSING_BRACKET = '}';
-
 	virtual void print(std::ostream& os, unsigned tabsCount = 0) const override;
 	virtual void search(const MyString& key) const override;
 	virtual void set(const StringView& path, const MyString& value) override;

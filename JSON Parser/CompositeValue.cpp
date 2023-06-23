@@ -1,4 +1,5 @@
 #include "CompositeValue.h"
+#include "Constants.h"
 
 static void printTabs(std::ostream& os, unsigned tabsCount) {
 	for (size_t i = 0; i < tabsCount; i++) {
@@ -9,7 +10,7 @@ static void printTabs(std::ostream& os, unsigned tabsCount) {
 CompositeValue::CompositeValue(Vector<SharedPtr<Value>>&& data, char openingBracket, char closingBracket) : data(std::move(data)), openingBracket(openingBracket), closingBracket(closingBracket) {}
 
 void CompositeValue::print(std::ostream& os, unsigned tabsCount) const {//TODO
-	if (this->openingBracket == CompositeValue::OBJECT_OPENING_BRACKET) {
+	if (this->openingBracket == OBJECT_OPENING_BRACKET) {
 		printTabs(os, tabsCount);
 		os << this->openingBracket << std::endl;
 
