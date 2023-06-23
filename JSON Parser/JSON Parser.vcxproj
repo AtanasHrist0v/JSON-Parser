@@ -144,6 +144,7 @@
     <ClInclude Include="SharedPtr.hpp" />
     <ClInclude Include="SimpleValue.h" />
     <ClInclude Include="StringView.h" />
+    <ClInclude Include="ValidateCommand.h" />
     <ClInclude Include="Value.h" />
     <ClInclude Include="ValueFactory.h" />
     <ClInclude Include="Vector.hpp" />
@@ -165,6 +166,7 @@
     <ClCompile Include="SearchCommand.cpp" />
     <ClCompile Include="SimpleValue.cpp" />
     <ClCompile Include="StringView.cpp" />
+    <ClCompile Include="ValidateCommand.cpp" />
     <ClCompile Include="ValueFactory.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

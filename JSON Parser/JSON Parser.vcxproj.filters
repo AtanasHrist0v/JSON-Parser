@@ -75,6 +75,9 @@
     <ClInclude Include="CommandsManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ValidateCommand.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="KeyValuePair.cpp">
@@ -126,6 +129,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CommandsManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ValidateCommand.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
