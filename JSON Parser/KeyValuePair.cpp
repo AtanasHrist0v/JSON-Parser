@@ -1,10 +1,7 @@
 #include "KeyValuePair.h"
-
-static void printTabs(std::ostream& os, unsigned tabsCount) {
-	for (size_t i = 0; i < tabsCount; i++) {
-		std::cout << "   ";
-	}
-}
+#include "HelperFunctions.h"
+#include "ValueFactory.h"
+#include <sstream>
 
 KeyValuePair::KeyValuePair(MyString&& key, SharedPtr<Value>&& value) : key(std::move(key)), value(std::move(value)) {}
 
@@ -24,12 +21,11 @@ void KeyValuePair::search(const MyString& key) const {//TODO regular expression 
 }
 
 void KeyValuePair::set(const StringView& path, const MyString& value) {
-	//if (path.length() == 0) {
-	//	return;
-	//}
-
 	if (path == this->key) {
-		this->value->set("", value);
+		std::stringstream ss(value.c_str());
+		this->value = std::move(valueFactory(ss));
+	} else {
+		//TODO
 	}
 }
 
