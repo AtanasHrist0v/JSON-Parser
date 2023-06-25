@@ -134,6 +134,7 @@
     <ClInclude Include="Constants.h" />
     <ClInclude Include="ExitCommand.h" />
     <ClInclude Include="HelpCommand.h" />
+    <ClInclude Include="HelperFunctions.h" />
     <ClInclude Include="JSONParser.h" />
     <ClInclude Include="KeyValuePair.h" />
     <ClInclude Include="MyString.h" />
@@ -156,6 +157,7 @@
     <ClCompile Include="CompositeValue.cpp" />
     <ClCompile Include="ExitCommand.cpp" />
     <ClCompile Include="HelpCommand.cpp" />
+    <ClCompile Include="HelperFunctions.cpp" />
     <ClCompile Include="JSONParser.cpp" />
     <ClCompile Include="KeyValuePair.cpp" />
     <ClCompile Include="main.cpp" />
