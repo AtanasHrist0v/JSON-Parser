@@ -2,7 +2,7 @@
 
 const char REVERSE_SOLIDUS_CHAR = '\\';
 const char DOUBLE_QUOTES_CHAR = '\"';
-const char COMMA_CHAR = ':';
+const char COMMA_CHAR = ',';
 const char COLON_CHAR = ':';
 const char DIGITS_CHARS[] = "0123456789";
 const char ARRAY_OPENING_BRACKET = '[';
