@@ -10,6 +10,11 @@ void OpenCommand::execute(const Vector<SharedPtr<MyString>>& arguments, SharedPt
 		throw std::logic_error("No file to open.");
 	}
 
+	if (filePath.length() != 0) {
+		std::cout << "A .json object is already loaded into memory. Please use 'close' command first." << std::endl;
+		return;
+	}
+
 	std::ifstream ifs(arguments[0]->c_str(), std::ios::in);
 	if (!ifs.is_open()) {
 		throw std::logic_error("Couldn't open file.");

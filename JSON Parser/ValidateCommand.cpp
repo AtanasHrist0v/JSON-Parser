@@ -45,7 +45,7 @@ static void validateJSON(std::ifstream& ifs) {
 				validateCompositeValue(ifs, ch, OBJECT_CLOSING_BRACKET);
 				break;
 			default:
-				validateSimpleValue(ifs);
+				validateSimpleValue(ifs, ch);
 				break;
 		}
 	}

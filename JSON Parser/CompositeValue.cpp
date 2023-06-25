@@ -1,11 +1,6 @@
 #include "CompositeValue.h"
 #include "Constants.h"
-
-static void printTabs(std::ostream& os, unsigned tabsCount) {
-	for (size_t i = 0; i < tabsCount; i++) {
-		os << "   ";
-	}
-}
+#include "HelperFunctions.h"
 
 CompositeValue::CompositeValue(Vector<SharedPtr<Value>>&& data, char openingBracket, char closingBracket) : data(std::move(data)), openingBracket(openingBracket), closingBracket(closingBracket) {}
 
